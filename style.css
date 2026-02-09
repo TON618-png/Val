@@ -429,4 +429,60 @@ body {
     color: #4a2a33;
     font-style: italic;
     font-weight: 700;
+
+}
+
+/* ---------------- MOBILE OVERRIDES (add at bottom, don't replace) ---------------- */
+
+/* Mobile scroll fix (your CSS currently uses overflow:hidden + 100vh in places) */
+.main-body,
+.album-body,
+.message-body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Phone layout */
+@media (max-width: 700px) {
+
+  /* Make the title readable on small screens (prevents typewriter overflow issues) */
+  .main-header h1{
+    font-size: 2.2rem;
+    white-space: normal;
+    width: auto;
+    border-right: none;
+    animation: none;
+  }
+
+  .love{
+    font-size: 1.8rem;
+  }
+
+  /* Your two photos are positioned absolute left/right — stack them on mobile */
+  .image-left,
+  .image-right{
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 90%;
+    max-width: 340px;
+    height: auto;
+    margin: 16px auto 0;
+  }
+
+  /* Make buttons easy to tap */
+  .buttons-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .buttons-container a{
+    width: 90%;
+    max-width: 260px;
+    text-align: center;
+  }
 }
